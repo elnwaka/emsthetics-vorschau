@@ -12,7 +12,7 @@
   <meta property="og:description" content="Studio-Lashes, selbst gesetzt. Zusammengestellt von Ems aus Regensburg.">
   <meta property="og:type" content="website">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="assets/img/ems.jpg" as="image" fetchpriority="high">
+  <link rel="preload" href="assets/img/set-packshot.jpg" as="image" fetchpriority="high">
   <link rel="preload" href="assets/fonts/bodoni-moda-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/jost-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/style.css">
@@ -40,13 +40,34 @@
 
   <main id="inhalt">
 
-    <!-- HERO -->
+    <!-- HERO: Produkt zuerst, damit sofort klar ist, worum es geht -->
     <section class="hero" aria-labelledby="hero-title">
       <div class="wrap hero__grid">
-        <div>
-          <p class="hero__kicker">DIY Cluster Set von emsthetics</p>
-          <h1 id="hero-title">Studio-Lashes, selbst gesetzt.</h1>
-          <p class="hero__lede">Ems setzt seit 2022 in Regensburg Wimpern. Für die Tage ohne Studio-Termin hat sie dieses Set zusammengestellt: Cluster in vier Längen, Bond &amp; Seal und ihre Lash Map, damit du weißt, welche Länge wohin gehört.</p>
+        <div class="pg">
+          <!-- KI-Symbolbilder (Gemini), vor Livegang durch echte Produktfotos ersetzen -->
+          <div class="pg__frame">
+            <div class="pg__track" id="pg-track" tabindex="0" aria-label="Produktbilder, zum Wechseln wischen">
+            <figure class="pg__slide"><img src="assets/img/set-packshot.jpg" width="1200" height="1200" fetchpriority="high" decoding="async" alt="Das DIY Cluster Set: Box mit Clustern, Bond &amp; Seal, Remover und Applikator"></figure>
+            <figure class="pg__slide"><img src="assets/img/set-flatlay.jpg" width="1000" height="1241" loading="lazy" decoding="async" alt="Alle Teile des Sets von oben"></figure>
+            <figure class="pg__slide"><img src="assets/img/set-box-makro.jpg" width="1400" height="939" loading="lazy" decoding="async" alt="Cluster in vier Längen, sortiert in der Box"></figure>
+            <figure class="pg__slide"><img src="assets/img/lash-natural.jpg" width="1200" height="805" loading="lazy" decoding="async" alt="Auge mit Cluster-Lashes im Look Natural"></figure>
+            <figure class="pg__slide"><img src="assets/img/set-detail.jpg" width="1200" height="1200" loading="lazy" decoding="async" alt="Bond &amp; Seal Stift mit feiner Spitze und einzelne Cluster"></figure>
+            </div>
+            <span class="ki-label">Symbolbilder</span>
+          </div>
+          <div class="pg__thumbs" aria-label="Bild auswählen">
+          <button type="button" aria-label="Bild 1: Set" aria-current="true"><img src="assets/img/thumb-set-packshot.jpg" width="160" height="160" alt=""></button>
+          <button type="button" aria-label="Bild 2: Alles im Set" aria-current="false"><img src="assets/img/thumb-set-flatlay.jpg" width="160" height="160" alt=""></button>
+          <button type="button" aria-label="Bild 3: Cluster-Box" aria-current="false"><img src="assets/img/thumb-set-box-makro.jpg" width="160" height="160" alt=""></button>
+          <button type="button" aria-label="Bild 4: Am Auge" aria-current="false"><img src="assets/img/thumb-lash-natural.jpg" width="160" height="160" alt=""></button>
+          <button type="button" aria-label="Bild 5: Bond &amp; Seal" aria-current="false"><img src="assets/img/thumb-set-detail.jpg" width="160" height="160" alt=""></button>
+          </div>
+        </div>
+
+        <div class="hero__info">
+          <p class="hero__kicker">emsthetics</p>
+          <h1 id="hero-title">DIY Cluster Set</h1>
+          <p class="hero__tagline">Studio-Lashes, selbst gesetzt.</p>
 
           <div class="buy" id="hero-buy">
             <p class="price">
@@ -56,20 +77,18 @@
             </p>
             <div class="buy__actions">
               <a class="btn" href="#kaufen" data-checkout>Jetzt kaufen</a>
-              <a class="link-quiet" href="#lash-map">Erst die Lash Map ansehen</a>
+              <a class="link-quiet" href="#lash-map">Zur Lash Map</a>
             </div>
           </div>
 
-          <p class="trust">
-            <span class="stars" aria-hidden="true">★★★★★</span>
-            <span><strong>4,9</strong> aus 26 Bewertungen für Ems’ Studio-Arbeit auf <a href="https://beautinda.de/artist/fUSm0AsC8kNRrEc2CpgLHMmDyXz2" rel="noopener">Beautinda</a></span>
-          </p>
-        </div>
+          <!-- PLATZHALTER: an den echten Set-Inhalt anpassen -->
+          <p class="hero__contents"><strong>Im Set:</strong> Cluster in 10, 12, 14 und 16 mm, Bond &amp; Seal, Remover, Applikator und eine Lash-Map-Karte für vier Looks.</p>
 
-        <figure class="hero__media">
-          <img src="assets/img/ems.jpg" width="1254" height="1254" fetchpriority="high" decoding="async" alt="Ems, Lash &amp; Brow Artistin aus Regensburg, mit ihrer Wimpern-Pinzette">
-          <figcaption class="hero__caption">Ems, Lash &amp; Brow Artist aus Regensburg</figcaption>
-        </figure>
+          <div class="by-ems">
+            <img src="assets/img/ems-avatar.jpg" width="144" height="144" alt="">
+            <p>Zusammengestellt von <strong>Ems</strong>, Lash &amp; Brow Artist aus Regensburg<br><span class="stars" aria-hidden="true">★★★★★</span> 4,9 aus 26 Bewertungen auf <a href="https://beautinda.de/artist/fUSm0AsC8kNRrEc2CpgLHMmDyXz2" rel="noopener">Beautinda</a></p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -90,8 +109,8 @@
         </div>
 
         <figure class="letter__figure">
-          <img src="assets/img/studio-marke.jpg" width="800" height="1000" loading="lazy" decoding="async" alt="Kundin nach der Behandlung mit dem Schild „EMSTHETICS, Aesthetic by Ems“">
-          <figcaption>Aus dem Studio in Regensburg</figcaption>
+          <img src="assets/img/ems.jpg" width="1254" height="1254" loading="lazy" decoding="async" alt="Ems, Lash &amp; Brow Artistin aus Regensburg, mit ihrer Wimpern-Pinzette">
+          <figcaption>Ems, Lash &amp; Brow Artist aus Regensburg</figcaption>
         </figure>
       </div>
     </section>

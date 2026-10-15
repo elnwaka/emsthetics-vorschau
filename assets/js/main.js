@@ -18,6 +18,39 @@ if (!checkoutReady) console.warn('[emsthetics] Stripe-Link fehlt noch: CHECKOUT_
 
 document.querySelectorAll('[data-year]').forEach((el) => (el.textContent = new Date().getFullYear()));
 
+/* ---------- Produktgalerie (Hero) ---------- */
+
+(function productGallery() {
+  const track = document.getElementById('pg-track');
+  const thumbs = Array.from(document.querySelectorAll('.pg__thumbs button'));
+  if (!track || !thumbs.length) return;
+  const slides = Array.from(track.children);
+  const setActive = (i) => thumbs.forEach((t, k) => t.setAttribute('aria-current', String(k === i)));
+  const go = (i) => {
+    const k = Math.max(0, Math.min(slides.length - 1, i));
+    track.scrollTo({ left: slides[k].offsetLeft, behavior: reduceMotion ? 'auto' : 'smooth' });
+    setActive(k);
+  };
+
+  thumbs.forEach((t, i) => t.addEventListener('click', () => go(i)));
+  track.addEventListener('keydown', (e) => {
+    const cur = thumbs.findIndex((t) => t.getAttribute('aria-current') === 'true');
+    if (e.key === 'ArrowRight') go(cur + 1);
+    if (e.key === 'ArrowLeft') go(cur - 1);
+  });
+
+  // Beim Wischen das passende Vorschaubild markieren
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => e.isIntersecting && setActive(slides.indexOf(e.target)));
+    }, { root: track, threshold: 0.6 });
+    slides.forEach((s) => io.observe(s));
+  }
+
+  // Erstes Bild kommt sofort, die anderen nach dem Seitenaufbau, damit Wischen nie leer ist
+  window.addEventListener('load', () => track.querySelectorAll('img[loading="lazy"]').forEach((img) => (img.loading = 'eager')));
+})();
+
 /* ---------- Lash Map ---------- */
 
 // mm: Laengen von innen nach aussen (5 Zonen), img: Foto des Looks
